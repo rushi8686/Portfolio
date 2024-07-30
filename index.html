@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushikesh's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding-left: 10%;
+        }
+
+        .container {
+            position: absolute;
+            left: 10%;
+            top: 25%;
+            max-width: 50%;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .main-intro {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .details {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+        }
+
+        .status-dot {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 15px 25px;
+            font-size: 1.5em;
+            border: 2px solid black;
+            background-color: transparent;
+            color: black;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .button.clicked {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello!</h1>
+        <p class="main-intro">I'm Rushikesh,</p>
+        <p class="details">Oracle developer for companies around the world.</p>
+    </div>
+    <div class="top-right">
+        <a href="#about" class="button">About</a>
+        <button class="button" onclick="copyEmail()">Copy Email</button>
+    </div>
+    <div class="status">
+        <div class="status-dot"></div>
+        <span class="details">Available to work</span>
+    </div>
+
+    <script>
+        function copyEmail() {
+            const email = "rushikesh@example.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const button = document.querySelector('.button[onclick="copyEmail()"]');
+                button.classList.add('clicked');
+                button.textContent = "Email Copied";
+                setTimeout(() => {
+                    button.classList.remove('clicked');
+                    button.textContent = "Copy Email";
+                }, 2000);
+            }).catch(err => {
+                console.error("Could not copy text: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
