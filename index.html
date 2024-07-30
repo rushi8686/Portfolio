@@ -9,19 +9,46 @@
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: flex-start;
+            align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-            padding: 0 10%;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #4267B2;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 2vw;
+            font-weight: bold;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .left-panel, .right-panel {
+            width: 20%;
+        }
+
+        .main-content {
+            width: 60%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .container {
-            position: absolute;
-            left: 10%;
-            top: 25%;
-            max-width: 50%;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -42,9 +69,7 @@
         .status {
             display: flex;
             align-items: center;
-            position: absolute;
-            bottom: 20%;
-            left: 10%;
+            margin-top: 20px;
         }
 
         .status-dot {
@@ -62,11 +87,9 @@
         }
 
         .top-right {
-            position: absolute;
-            top: 10px;
-            right: 10px;
             display: flex;
             gap: 10px;
+            margin-top: 20px;
         }
 
         .button {
@@ -93,22 +116,30 @@
         }
 
         .image-container {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20%;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
         }
 
         .image-container img {
-            width: 100%;
+            width: 50%;
             height: auto;
             border-radius: 20px;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 5%;
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left-panel, .right-panel {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .main-content {
+                width: 100%;
             }
 
             h1, .main-intro {
@@ -133,46 +164,41 @@
                 font-size: 3vw;
             }
 
-            .container {
-                left: 5%;
-                top: 20%;
-            }
-
-            .image-container {
-                position: static;
-                margin-top: 20px;
-                width: 50%;
-                align-self: center;
-            }
-
-            .top-right {
-                right: 5px;
-                gap: 5px;
-            }
-
-            .status {
-                bottom: 10%;
-                left: 5%;
+            .image-container img {
+                width: 80%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello!</h1>
-        <p class="main-intro">I'm Rushikesh,</p>
-        <p class="details">Oracle developer for companies around the world.</p>
+    <div class="header">
+        Rushikesh's Portfolio
     </div>
-    <div class="top-right">
-        <a href="#about" class="button">About</a>
-        <button class="button" onclick="copyEmail()">Copy Email</button>
-    </div>
-    <div class="status">
-        <div class="status-dot"></div>
-        <span class="status-text">Available to work</span>
-    </div>
-    <div class="image-container">
-        <img src="your-image.webp" alt="Profile Image">
+    <div class="content">
+        <div class="left-panel">
+            <!-- Left panel content (if any) -->
+        </div>
+        <div class="main-content">
+            <div class="container">
+                <h1>Hello!</h1>
+                <p class="main-intro">I'm Rushikesh,</p>
+                <p class="details">Oracle developer for companies around the world.</p>
+            </div>
+            <div class="top-right">
+                <a href="#about" class="button">About</a>
+                <button class="button" onclick="copyEmail()">Copy Email</button>
+            </div>
+            <div class="status">
+                <div class="status-dot"></div>
+                <span class="status-text">Available to work</span>
+            </div>
+            <div class="image-container">
+                <img src="your-image.webp" alt="Profile Image">
+            </div>
+        </div>
+        <div class="right-panel">
+            <!-- Right panel content (if any) -->
+        </div>
     </div>
 
     <script>
